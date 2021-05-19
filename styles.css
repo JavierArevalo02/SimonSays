@@ -4,7 +4,70 @@ body {
     display: flex;
     align-items: center;
     height: 100vh;
-  }
+    font-family: 'Muli', sans-serif;
+}
+
+.input {
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid skyblue;
+    
+    font-family: 'Muli', sans-serif;
+    font-size:26px;
+    height: 50px;
+    padding:0px 35px;
+    width:70%;
+    outline: none;
+    text-align: center;
+}
+
+::placeholder{
+    color: grey
+}
+.login__form{
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+}
+
+.button{
+    border-radius: 50px;
+    height: 24px;
+    margin: 15px 0px;
+    background-color: skyblue;
+    color: grey;
+    font-size: 15px;
+    transition: 1000ms background-color;
+    letter-spacing: 2px;
+    border: 0px;
+    text-align: center;
+}
+  .login__container{
+    border-radius: 40px;
+    border: 2px solid skyblue;
+    color:grey;
+    width: 350px;
+    padding: 60px 50px 20px;
+    box-sizing: border-box; 
+    background-color:gainsboro;
+    box-shadow: 10px 10px 10px 0px skyblue
+}
+
+  .log{
+    width: 100%;
+    align-self: center;
+    margin: 60px 0px;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh -200px)
+}
 
   .gameboard {
     height: 100vh;

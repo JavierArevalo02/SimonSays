@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simon Says</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class = "lineaizq"> 
+      <div id="red-1" class="colorlateral red" data-color="red1"></div>
+      <div id="darkblue-1" class="colorlateral darkblue " data-color="darkblue1"></div>
+      <div id="yellow-1" class="colorlateral yellow " data-color="yellow1"></div>
+      <div id="brown-1" class="colorlateral brown" data-color="brown1"></div>
+    </div>
+    <div class="gameboard">
+      <div id="celeste" class="color celeste left" data-color="celeste"></div>
+      <div id="violeta" class="color violeta right" data-color="violeta"></div>
+      <div id="naranja" class="color naranja left" data-color="naranja"></div>
+      <div id="verde" class="color verde right" data-color="verde"></div>
+      <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a jugar!</button>
+    </div>
+    <div class = "lineader">
+      <div id="brown-2" class="colorlateral brown" data-color="brown2"></div>
+      <div id="yellow-2" class="colorlateral yellow" data-color="yellow2"></div>
+      <div id="darkblue-2" class="colorlateral darkblue" data-color="darkblue2"></div>
+      <div id="red-2" class="colorlateral red" data-color="red2"></div>
+    </div>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src = "main.js"></script>
+  </body>
+</html>
