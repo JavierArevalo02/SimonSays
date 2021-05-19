@@ -259,7 +259,8 @@
           }
         }
         perdiojuego(){
-          swal('Perdiste','Tu puntaje es: ','error')
+          const message = 'Tu puntaje es: ' + contlevel
+          swal('Perdiste',message,'error')
             .then(()=>{
               this.eliminarEventClick()
               contlevel = 0
@@ -267,7 +268,8 @@
             })
         }
         ganajuego(){ 
-          swal('Ganaste','Tu puntaje es: ','success')
+          const message = 'Tu puntaje es: ' + contlevel
+          swal('Ganaste',message,'success')
             .then(this.inicializar)
         }
         colortonumber(color){
