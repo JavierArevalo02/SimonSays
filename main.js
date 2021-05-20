@@ -12,16 +12,20 @@ const brown1 = document.getElementById('brown-1')
 const brown2 = document.getElementById('brown-2')
 const btnEmpezar = document.getElementById('btnEmpezar')
 const inicio = document.getElementById('inicio')
-const UltimoNivel = 10
+const UltimoNivel = 4
+console.log(celeste)
+
+
 var contlevel = 0
 
 class Juego {
         
-    constructor() {
-        this.inicializar = this.inicializar.bind(this)
-        this.inicializar()
-        this.generasecuencia()
-        this.aumentanivel()
+    constructor(name) { 
+      this.player = name
+      this.inicializar = this.inicializar.bind(this)
+      this.inicializar()
+      this.generasecuencia()
+      this.aumentanivel()
         
     }
 
@@ -33,7 +37,6 @@ class Juego {
         this.colores = {celeste,violeta,naranja,verde,red1,darkblue1,yellow1,brown1,brown2,yellow2,darkblue2,red2}
     }
     toggleBtnEmpezar(){
-
         if(btnEmpezar.classList.contains('hide')){
             btnEmpezar.classList.remove('hide')
         }else{
@@ -105,8 +108,11 @@ class Juego {
         }
     }
     perdiojuego(){
+        
+        const tittle = this.player + " perdiste"
+        console.log(tittle)
         const message = 'Tu puntaje es: ' + contlevel
-        swal('Perdiste',message,'error')
+        swal(tittle,message,'error')
         .then(()=>{
             this.eliminarEventClick()
             contlevel = 0
@@ -114,9 +120,11 @@ class Juego {
         })
         }
     ganajuego(){ 
-        const message = 'Tu puntaje es: ' + contlevel
-        swal('Ganaste',message,'success')
-        .then(this.inicializar)
+      console.log(this.player)
+      const tittle = this.player + " Ganaste"  
+      const message = 'Tu puntaje es: ' + contlevel
+      swal(tittle,message,'success')
+      .then(this.inicializar)
     }
     colortonumber(color){
         switch(color){
@@ -194,6 +202,6 @@ class Juego {
   
     function empezarJuego() {
       const name = document.getElementById("name").value;
-      console.log(name)
-      window.juego = new Juego()
+     
+      window.juego = new Juego(name)
     }
