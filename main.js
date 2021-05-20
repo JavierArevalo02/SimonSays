@@ -11,6 +11,7 @@ const yellow2 = document.getElementById('yellow-2')
 const brown1 = document.getElementById('brown-1')
 const brown2 = document.getElementById('brown-2')
 const btnEmpezar = document.getElementById('btnEmpezar')
+const inicio = document.getElementById('inicio')
 const UltimoNivel = 10
 var contlevel = 0
 
@@ -32,6 +33,7 @@ class Juego {
         this.colores = {celeste,violeta,naranja,verde,red1,darkblue1,yellow1,brown1,brown2,yellow2,darkblue2,red2}
     }
     toggleBtnEmpezar(){
+
         if(btnEmpezar.classList.contains('hide')){
             btnEmpezar.classList.remove('hide')
         }else{
@@ -189,12 +191,9 @@ class Juego {
     }
         
     }
-
+  
     function empezarJuego() {
-        window.juego = new Juego()
-    }
-
-    function GetName() {
-        var name = document.getElementById("name").value;
-        console.log(name)
+      const name = document.getElementById("name").value;
+      console.log(name)
+      window.juego = new Juego()
     }
