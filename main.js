@@ -13,7 +13,7 @@ const brown2 = document.getElementById('brown-2')
 const btnEmpezar = document.getElementById('btnEmpezar')
 const inicio = document.getElementById('inicio')
 const UltimoNivel = 4
-console.log(celeste)
+
 
 
 var contlevel = 0
@@ -110,7 +110,7 @@ class Juego {
     perdiojuego(){
         
         const tittle = this.player + " perdiste"
-        console.log(tittle)
+        //console.log(tittle)
         const message = 'Tu puntaje es: ' + contlevel
         swal(tittle,message,'error')
         .then(()=>{
@@ -120,7 +120,7 @@ class Juego {
         })
         }
     ganajuego(){ 
-      console.log(this.player)
+      //console.log(this.player)
       const tittle = this.player + " Ganaste"  
       const message = 'Tu puntaje es: ' + contlevel
       swal(tittle,message,'success')
