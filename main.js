@@ -21,6 +21,7 @@ class Juego {
         this.inicializar()
         this.generasecuencia()
         this.aumentanivel()
+        
     }
 
     inicializar() {
@@ -40,7 +41,7 @@ class Juego {
         
     generasecuencia(){
         this.secuencia= new Array(UltimoNivel).fill(0).map(n=> Math.floor( Math.random()*12))
-        console.log(this.secuencia)
+        //console.log(this.secuencia)
     }
         
     aumentanivel(){
@@ -88,7 +89,7 @@ class Juego {
             if (this.subnivel === this.level){
                 this.level++
                 contlevel +=1
-                console.log(contlevel)
+                //console.log(contlevel)
                 this.eliminarEventClick()
                 if(this.level === (UltimoNivel+1)){
                     this.ganajuego()
@@ -151,7 +152,7 @@ class Juego {
         }
     }
     iluminacolor(color){
-        console.log(color)
+        //console.log(color)
         this.colores[color].classList.add('light')
         setTimeout(()=>this.apagarcolor(color),350)
     }
@@ -191,4 +192,9 @@ class Juego {
 
     function empezarJuego() {
         window.juego = new Juego()
+    }
+
+    function GetName() {
+        var name = document.getElementById("name").value;
+        console.log(name)
     }
