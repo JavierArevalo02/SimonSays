@@ -109,7 +109,7 @@ class Juego {
     }
     perdiojuego(){
         
-        const tittle = this.player + " perdiste"
+        const tittle = this.player + " you lost"
         //console.log(tittle)
         const message = 'Tu puntaje es: ' + contlevel
         swal(tittle,message,'error')
@@ -121,7 +121,7 @@ class Juego {
         }
     ganajuego(){ 
       //console.log(this.player)
-      const tittle = this.player + " Ganaste"  
+      const tittle = this.player + " you won"  
       const message = 'Tu puntaje es: ' + contlevel
       swal(tittle,message,'success')
       .then(this.inicializar)
