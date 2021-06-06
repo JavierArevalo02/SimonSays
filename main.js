@@ -13,7 +13,7 @@ const brown2 = document.getElementById('brown-2')
 const btnEmpezar = document.getElementById('btnEmpezar')
 const inicio = document.getElementById('inicio')
 const UltimoNivel = 4
-
+var login = document.getElementById("register")
 
 
 var contlevel = 0
@@ -37,11 +37,17 @@ class Juego {
         this.colores = {celeste,violeta,naranja,verde,red1,darkblue1,yellow1,brown1,brown2,yellow2,darkblue2,red2}
     }
     toggleBtnEmpezar(){
-        if(btnEmpezar.classList.contains('hide')){
-            btnEmpezar.classList.remove('hide')
-        }else{
-            btnEmpezar.classList.add('hide')
-        }
+      
+      if(login.style.display !='none'){
+        login.style.display = 'none'
+      }else{
+        login.style.display = 'block'
+      }
+      if(btnEmpezar.classList.contains('hide')){
+          btnEmpezar.classList.remove('hide')
+      }else{
+          btnEmpezar.classList.add('hide')
+      }
     }
         
     generasecuencia(){
@@ -86,6 +92,7 @@ class Juego {
     }
 
     elige(ev){
+        console.log(ev)
         const namecolor = ev.target.dataset.color
         const numbercolor = this.colortonumber(namecolor)
         this.iluminacolor(namecolor)
@@ -108,10 +115,9 @@ class Juego {
         }
     }
     perdiojuego(){
-        
         const tittle = this.player + " you lost"
         //console.log(tittle)
-        const message = 'Tu puntaje es: ' + contlevel
+        const message = 'your score: ' + contlevel
         swal(tittle,message,'error')
         .then(()=>{
             this.eliminarEventClick()
@@ -122,7 +128,7 @@ class Juego {
     ganajuego(){ 
       //console.log(this.player)
       const tittle = this.player + " you won"  
-      const message = 'Tu puntaje es: ' + contlevel
+      const message = 'your score: ' + contlevel
       swal(tittle,message,'success')
       .then(this.inicializar)
     }
@@ -162,7 +168,7 @@ class Juego {
         }
     }
     iluminacolor(color){
-        //console.log(color)
+        console.log(color)
         this.colores[color].classList.add('light')
         setTimeout(()=>this.apagarcolor(color),350)
     }
@@ -199,9 +205,9 @@ class Juego {
     }
         
     }
-  
     function empezarJuego() {
       const name = document.getElementById("name").value;
-     
+      if( name != ''){
       window.juego = new Juego(name)
+      }    
     }
